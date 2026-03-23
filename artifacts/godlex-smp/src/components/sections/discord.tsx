@@ -33,7 +33,7 @@ export function Discord() {
               <Button 
                 size="lg"
                 className="h-14 px-8 text-lg font-bold rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white shadow-[0_0_20px_rgba(88,101,242,0.3)] hover:shadow-[0_0_30px_rgba(88,101,242,0.5)] transition-all duration-300 hover:-translate-y-1 border-0"
-                onClick={() => window.open("https://discord.gg/godlexsmp", "_blank")}
+                onClick={() => window.open("https://discord.gg/FC6S3THz5p", "_blank")}
               >
                 Join Our Discord
               </Button>
@@ -56,12 +56,8 @@ export function Discord() {
               <div className="absolute -inset-1 bg-gradient-to-r from-[#5865F2] to-primary rounded-[20px] blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
               
               <div className="relative glass-card rounded-[18px] p-2 bg-[#1e1f22]/80 backdrop-blur-xl border-[#5865F2]/20">
-                {/* 
-                  Using a placeholder Discord widget ID since the real one is unknown.
-                  The layout will still show exactly how it looks. 
-                */}
                 <iframe 
-                  src="https://discord.com/widget?id=81384788765712384&theme=dark" 
+                  src="https://discord.com/widget?id=1441615784118980661&theme=dark" 
                   width="350" 
                   height="500" 
                   allowTransparency={true} 
