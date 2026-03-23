@@ -1,0 +1,14 @@
+packages:
+  "framer-motion": "For premium entry and scroll animations"
+  "clsx": "Utility for conditionally joining classNames"
+  "tailwind-merge": "Utility for merging tailwind classes without style conflicts"
+
+images:
+  - path: "artifacts/godlex-smp/public/images/hero-bg.png"
+    description: "A dramatic, immersive dark background with deep purple and violet gradient meshes, subtle glowing particles, and a cinematic cosmic or magical atmosphere, perfect for a premium gaming website hero section."
+    aspect_ratio: "16:9"
+
+notes:
+  - Using public mcsrvstat.us API for Minecraft server status
+  - Single page layout with smooth hash routing for navigation
+  - Deep dark purple theme enforced globally via CSS variables
