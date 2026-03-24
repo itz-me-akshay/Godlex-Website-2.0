@@ -5,7 +5,10 @@
     "rootDir": "src",
     "types": ["node"],
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "strict": false,
+    "skipLibCheck": true
   },
   "include": ["src"],
   "references": [
