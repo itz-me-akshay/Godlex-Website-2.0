@@ -1,6 +1,6 @@
-import * as express from "express";
 import express, { type Express, type Request, type Response } from "express";
 import cors from "cors";
+// @ts-ignore
 import pinoHttp from "pino-http";
 import router from "./routes";
 import { logger } from "./lib/logger";
