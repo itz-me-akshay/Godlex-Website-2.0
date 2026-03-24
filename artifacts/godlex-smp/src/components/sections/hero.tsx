@@ -53,7 +53,7 @@ export function Hero() {
           </p>
           
           <p className="max-w-2xl mx-auto text-base md:text-lg text-white/70 mb-10 leading-relaxed">
-            Welcome to Godlex SMP, a premium Minecraft survival multiplayer server built for passionate players. Created and managed by <span className="text-white font-semibold">ZrockeyZore</span>, Godlex SMP offers an immersive, community-driven experience with unique ranks, events, and a thriving player base.
+            Welcome to Godlex SMP, a premium Minecraft survival multiplayer server built for passionate players. An immersive, community-driven experience with unique ranks, events, and a thriving player base.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

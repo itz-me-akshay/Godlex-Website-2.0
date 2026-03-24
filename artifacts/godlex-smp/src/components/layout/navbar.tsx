@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { name: "Home", href: "#home" },
   { name: "Server Status", href: "#server-status" },
   { name: "Ranks", href: "#ranks" },
+  { name: "Staff", href: "#staff" },
   { name: "Discord", href: "#discord" },
 ];
 
