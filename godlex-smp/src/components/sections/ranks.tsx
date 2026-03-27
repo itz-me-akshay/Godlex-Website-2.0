@@ -9,6 +9,7 @@ const RANKS = [
     id: "vip",
     name: "VIP",
     price: "₹29",
+    originalPrice: "₹39",
     popular: false,
     color: "text-purple-400",
     bgColor: "bg-purple-500/10",
@@ -130,7 +131,10 @@ export function Ranks() {
                   </div>
 
                   <h3 className="text-2xl font-display font-bold text-white mb-1">{rank.name}</h3>
-                  <div className="mb-5">
+                  <div className="mb-5 flex items-baseline gap-2">
+                    {"originalPrice" in rank && (
+                      <span className="text-xl font-semibold text-white/40 line-through">{(rank as typeof rank & { originalPrice: string }).originalPrice}</span>
+                    )}
                     <span className="text-4xl font-black text-white">{rank.price}</span>
                   </div>
 
