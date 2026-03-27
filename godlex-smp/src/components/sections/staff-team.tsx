@@ -46,15 +46,13 @@ function MemberCard({ member, role, icon }: { member: StaffMember; role: string;
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`https://discordlookup.mesalytic.moe/v1/user/${member.userId}`)
+    fetch(`https://api.lanyard.rest/v1/users/${member.userId}`)
       .then((r) => r.json())
       .then((data) => {
-        if (data?.avatar?.id) {
+        if (data?.data?.discord_user) {
           setUser({
-            avatar: data.avatar.id,
-            avatar_decoration_data: data.avatar_decoration
-              ? { asset: data.avatar_decoration.asset, sku_id: data.avatar_decoration.sku_id }
-              : null,
+            avatar: data.data.discord_user.avatar,
+            avatar_decoration_data: data.data.discord_user.avatar_decoration_data ?? null,
           });
         }
       })
