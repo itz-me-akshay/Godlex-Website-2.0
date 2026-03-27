@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/hero";
 import { ServerStatus } from "@/components/sections/server-status";
 import { Ranks } from "@/components/sections/ranks";
 import { Discord } from "@/components/sections/discord";
+import { StaffTeam } from "@/components/sections/staff-team";
 
 export default function Home() {
   return (
@@ -25,6 +26,10 @@ export default function Home() {
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
         <Discord />
+
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <StaffTeam />
       </div>
 
       <Footer />
