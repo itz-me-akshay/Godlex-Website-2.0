@@ -1,75 +1,88 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Shield, Crown, User } from "lucide-react";
+import { CheckCircle2, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 const RANKS = [
   {
-    id: "member",
-    name: "Member",
-    price: "Free",
-    icon: User,
-    color: "text-slate-300",
-    bgColor: "bg-slate-300/10",
-    borderColor: "border-slate-300/30",
-    glow: "shadow-[0_0_30px_-10px_rgba(203,213,225,0.3)]",
-    perks: [
-      "Access to survival world",
-      "Basic /home and /spawn commands",
-      "Join the community Discord",
-      "Participate in server events",
-      "Build and explore freely"
-    ],
+    id: "vip",
+    name: "VIP",
+    price: "₹29",
     popular: false,
-  },
-  {
-    id: "knight",
-    name: "Knight",
-    price: "$9.99/mo",
-    icon: Shield,
-    color: "text-yellow-400",
-    bgColor: "bg-yellow-400/10",
-    borderColor: "border-yellow-400/50",
-    glow: "shadow-[0_0_40px_-5px_rgba(250,204,21,0.4)]",
+    color: "text-purple-400",
+    bgColor: "bg-purple-500/10",
+    borderColor: "border-purple-500/30",
+    glow: "shadow-[0_0_30px_-10px_rgba(168,85,247,0.4)]",
+    btnClass: "bg-purple-600 hover:bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.3)]",
     perks: [
-      "Everything in Member",
+      "Purple [VIP] prefix in chat",
       "3 home locations",
-      "Priority server join",
-      "Exclusive Knight title and prefix",
-      "Access to Knight-only areas",
-      "Monthly in-game reward kit"
+      "Access to VIP lounge",
+      "Monthly reward kit",
     ],
-    popular: true,
   },
   {
-    id: "godlex",
-    name: "Godlex",
-    price: "$24.99/mo",
-    icon: Crown,
-    color: "text-primary",
-    bgColor: "bg-primary/10",
-    borderColor: "border-primary/50",
-    glow: "shadow-[0_0_40px_-5px_rgba(124,58,237,0.5)]",
+    id: "mvp",
+    name: "MVP",
+    price: "₹49",
+    popular: true,
+    color: "text-fuchsia-400",
+    bgColor: "bg-fuchsia-500/10",
+    borderColor: "border-fuchsia-500/40",
+    glow: "shadow-[0_0_40px_-5px_rgba(217,70,239,0.5)]",
+    btnClass: "bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white shadow-[0_0_20px_rgba(217,70,239,0.35)]",
     perks: [
-      "Everything in Knight",
-      "Unlimited home locations",
-      "VIP lounge access",
-      "Custom name color",
-      "Direct line to server admins",
-      "Exclusive Godlex cosmetics",
-      "Early access to new features",
-      "Double in-game currency rewards"
+      "Everything in VIP",
+      "Purple [MVP] prefix in chat",
+      "5 home locations",
+      "Custom chat color",
+      "Priority server join",
     ],
+  },
+  {
+    id: "elite",
+    name: "Elite",
+    price: "₹129",
     popular: false,
-  }
+    color: "text-blue-400",
+    bgColor: "bg-blue-500/10",
+    borderColor: "border-blue-500/30",
+    glow: "shadow-[0_0_30px_-10px_rgba(59,130,246,0.4)]",
+    btnClass: "bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]",
+    perks: [
+      "Everything in MVP",
+      "Blue [Elite] prefix in chat",
+      "10 home locations",
+      "Access to Elite-only areas",
+      "Double in-game currency",
+    ],
+  },
+  {
+    id: "god",
+    name: "God",
+    price: "₹199",
+    popular: false,
+    color: "text-yellow-400",
+    bgColor: "bg-yellow-500/10",
+    borderColor: "border-yellow-500/30",
+    glow: "shadow-[0_0_40px_-5px_rgba(234,179,8,0.45)]",
+    btnClass: "bg-gradient-to-r from-yellow-500 to-amber-400 hover:from-yellow-400 hover:to-amber-300 text-yellow-950 font-extrabold shadow-[0_0_20px_rgba(234,179,8,0.4)]",
+    perks: [
+      "Everything in Elite",
+      "Golden [God] prefix in chat",
+      "Unlimited home locations",
+      "Direct line to admins",
+      "Exclusive God cosmetics",
+      "Early access to new features",
+    ],
+  },
 ];
 
 export function Ranks() {
   return (
     <section id="ranks" className="py-24 relative overflow-hidden">
-      {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -78,21 +91,25 @@ export function Ranks() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Support the <span className="text-primary">Server</span></h2>
-          <p className="text-white/60 max-w-2xl mx-auto">Enhance your gameplay with exclusive perks while keeping Godlex SMP running.</p>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            Support the <span className="text-primary">Server</span>
+          </h2>
+          <p className="text-white/60 max-w-2xl mx-auto">
+            Enhance your gameplay with exclusive perks while keeping Godlex SMP running.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
           {RANKS.map((rank, index) => (
             <motion.div
               key={rank.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-              className={cn("relative h-full", rank.popular ? "md:-mt-8 md:mb-8 z-20" : "z-10")}
+              transition={{ delay: index * 0.1 }}
+              className={cn("relative h-full", rank.popular ? "lg:-mt-4 z-20" : "z-10")}
             >
-              <Card 
+              <Card
                 className={cn(
                   "glass-card flex flex-col h-full overflow-hidden transition-all duration-300 hover:-translate-y-2",
                   rank.borderColor,
@@ -101,44 +118,38 @@ export function Ranks() {
                 )}
               >
                 {rank.popular && (
-                  <div className="bg-gradient-to-r from-yellow-500 to-yellow-300 text-yellow-950 text-xs font-bold uppercase tracking-widest text-center py-1.5 shadow-md">
+                  <div className="bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white text-xs font-bold uppercase tracking-widest text-center py-1.5">
                     Most Popular
                   </div>
                 )}
-                
-                <div className="p-8 flex-grow flex flex-col">
-                  <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center mb-6", rank.bgColor)}>
-                    <rank.icon className={cn("w-7 h-7", rank.color)} />
+
+                <div className="p-6 flex-grow flex flex-col">
+                  {/* Icon */}
+                  <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center mb-5", rank.bgColor)}>
+                    <Star className={cn("w-6 h-6", rank.color)} />
                   </div>
-                  
-                  <h3 className="text-2xl font-display font-bold text-white mb-2">{rank.name}</h3>
-                  <div className="mb-6 flex items-baseline gap-1">
+
+                  <h3 className="text-2xl font-display font-bold text-white mb-1">{rank.name}</h3>
+                  <div className="mb-5">
                     <span className="text-4xl font-black text-white">{rank.price}</span>
                   </div>
-                  
-                  <div className="w-full h-px bg-white/10 mb-6"></div>
-                  
-                  <ul className="space-y-4 mb-8 flex-grow">
+
+                  <div className="w-full h-px bg-white/10 mb-5" />
+
+                  <ul className="space-y-3 mb-6 flex-grow">
                     {rank.perks.map((perk, i) => (
                       <li key={i} className="flex items-start">
-                        <CheckCircle2 className={cn("w-5 h-5 shrink-0 mr-3 mt-0.5", rank.color)} />
+                        <CheckCircle2 className={cn("w-4 h-4 shrink-0 mr-2.5 mt-0.5", rank.color)} />
                         <span className="text-sm text-white/80 leading-tight">{perk}</span>
                       </li>
                     ))}
                   </ul>
-                  
-                  <Button 
-                    className={cn(
-                      "w-full h-12 text-base font-bold rounded-xl border-0 mt-auto",
-                      rank.popular 
-                        ? "bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 text-yellow-950" 
-                        : rank.id === 'godlex'
-                          ? "bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-[0_0_15px_rgba(124,58,237,0.3)]"
-                          : "bg-white/10 hover:bg-white/20 text-white"
-                    )}
-                    onClick={() => window.open("https://store.godlexsmp.com", "_blank")} // Placeholder URL
+
+                  <Button
+                    className={cn("w-full h-11 text-base font-bold rounded-xl border-0 mt-auto", rank.btnClass)}
+                    onClick={() => window.open("https://discord.gg/FC6S3THz5p", "_blank")}
                   >
-                    {rank.id === 'member' ? "Join Free" : "Get Rank"}
+                    Get {rank.name}
                   </Button>
                 </div>
               </Card>
