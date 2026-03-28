@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Star } from "lucide-react";
+import { CheckCircle2, Key } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -80,12 +80,56 @@ const RANKS = [
   },
 ];
 
+const KEYS = [
+  {
+    id: "vip-key",
+    name: "VIP KEY",
+    price: "10₹",
+    color: "text-purple-400",
+    bgColor: "bg-purple-500/10",
+    borderColor: "border-purple-500/30",
+    glow: "shadow-[0_0_30px_-10px_rgba(168,85,247,0.4)]",
+    btnClass: "bg-purple-600 hover:bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.3)]",
+  },
+  {
+    id: "mvp-key",
+    name: "MVP KEY",
+    price: "29₹",
+    color: "text-fuchsia-400",
+    bgColor: "bg-fuchsia-500/10",
+    borderColor: "border-fuchsia-500/40",
+    glow: "shadow-[0_0_40px_-5px_rgba(217,70,239,0.5)]",
+    btnClass: "bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white shadow-[0_0_20px_rgba(217,70,239,0.35)]",
+  },
+  {
+    id: "elite-key",
+    name: "ELITE KEY",
+    price: "49₹",
+    color: "text-blue-400",
+    bgColor: "bg-blue-500/10",
+    borderColor: "border-blue-500/30",
+    glow: "shadow-[0_0_30px_-10px_rgba(59,130,246,0.4)]",
+    btnClass: "bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]",
+  },
+  {
+    id: "god-key",
+    name: "GOD KEY",
+    price: "99₹",
+    color: "text-yellow-400",
+    bgColor: "bg-yellow-500/10",
+    borderColor: "border-yellow-500/30",
+    glow: "shadow-[0_0_40px_-5px_rgba(234,179,8,0.45)]",
+    btnClass: "bg-gradient-to-r from-yellow-500 to-amber-400 hover:from-yellow-400 hover:to-amber-300 text-yellow-950 font-extrabold shadow-[0_0_20px_rgba(234,179,8,0.4)]",
+  },
+];
+
 export function Ranks() {
   return (
     <section id="ranks" className="py-24 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Ranks Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +171,7 @@ export function Ranks() {
                 <div className="p-6 flex-grow flex flex-col">
                   {/* Icon */}
                   <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center mb-5", rank.bgColor)}>
-                    <Star className={cn("w-6 h-6", rank.color)} />
+                    <Key className={cn("w-6 h-6", rank.color)} />
                   </div>
 
                   <h3 className="text-2xl font-display font-bold text-white mb-1">{rank.name}</h3>
@@ -154,6 +198,63 @@ export function Ranks() {
                     onClick={() => window.open("https://discord.gg/FC6S3THz5p", "_blank")}
                   >
                     Get {rank.name}
+                  </Button>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Keys Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-24 mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            Unlock with <span className="text-primary">Keys</span>
+          </h2>
+          <p className="text-white/60 max-w-2xl mx-auto">
+            Use keys to unlock special crates and exclusive in-game rewards.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+          {KEYS.map((key, index) => (
+            <motion.div
+              key={key.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="relative h-full z-10"
+            >
+              <Card
+                className={cn(
+                  "glass-card flex flex-col h-full overflow-hidden transition-all duration-300 hover:-translate-y-2",
+                  key.borderColor,
+                  key.glow
+                )}
+              >
+                <div className="p-6 flex-grow flex flex-col">
+                  {/* Key Icon */}
+                  <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center mb-5", key.bgColor)}>
+                    <Key className={cn("w-6 h-6", key.color)} />
+                  </div>
+
+                  <h3 className="text-2xl font-display font-bold text-white mb-1">{key.name}</h3>
+                  <div className="mb-5">
+                    <span className="text-4xl font-black text-white">{key.price}</span>
+                  </div>
+
+                  <div className="w-full h-px bg-white/10 mb-5" />
+
+                  <Button
+                    className={cn("w-full h-11 text-base font-bold rounded-xl border-0 mt-auto", key.btnClass)}
+                    onClick={() => window.open("https://discord.gg/FC6S3THz5p", "_blank")}
+                  >
+                    Get {key.name}
                   </Button>
                 </div>
               </Card>
