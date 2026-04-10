@@ -7,24 +7,24 @@ interface StaffMember {
 }
 
 const OWNERS: StaffMember[] = [
-  { name: "ZrockeyZore", avatar: "AVATAR_LINK" },
-  { name: "Niranjan",    avatar: "AVATAR_LINK" },
-  { name: "Spade",       avatar: "AVATAR_LINK" },
+  { name: "ZrockeyZore", avatar: "https://cdn.discordapp.com/avatars/1390656103800639683/c32a9b05825585864dd0af976996292c.png?size=1024" },
+  { name: "Niranjan",    avatar: "https://cdn.discordapp.com/avatars/1397883506620764262/20e8e381263a8cf42b9a91f7b1f956b6.webp?size=1024" },
+  { name: "Spade",       avatar: "https://cdn.discordapp.com/avatars/1422810770810605588/95b1a7e19dd9e16314750a60e3c40887.webp?size=1024" },
 ];
 
 const CEOS: StaffMember[] = [
-  { name: "Akshay", avatar: "AVATAR_LINK" },
-  { name: "Aadhi",  avatar: "AVATAR_LINK" },
+  { name: "Akshay", avatar: "https://cdn.discordapp.com/avatars/1465701978180157697/1a73acf8e8ed34c4726dc3e234ca1962.webp?size=1024" },
+  { name: "Aadhi",  avatar: "https://cdn.discordapp.com/avatars/1190272344753717258/6b820a2f812c30447e11f107590e6741.webp?size=1024" },
 ];
 
 const HELPERS: StaffMember[] = [
-  { name: "Zikki",        avatar: "AVATAR_LINK" },
-  { name: "Hombanstar",   avatar: "AVATAR_LINK" },
-  { name: "Ultrabench27", avatar: "AVATAR_LINK" },
-  { name: "Iconic",       avatar: "AVATAR_LINK" },
-  { name: "Soul Dude",    avatar: "AVATAR_LINK" },
-  { name: "Fluidlight",   avatar: "AVATAR_LINK" },
-  { name: "Tender",       avatar: "AVATAR_LINK" },
+  { name: "Zikki",        avatar: "https://cdn.discordapp.com/avatars/1314598265739542608/7a04082a3315e43674b775256450f34e.webp?size=1024" },
+  { name: "Hombanstar",   avatar: "https://cdn.discordapp.com/avatars/1376209377328889988/f710a85d6836b1cac9bd05d76507cf3f.webp?size=1024" },
+  { name: "Ultrabench27", avatar: "https://cdn.discordapp.com/avatars/1130390591281319967/98489dd54e101ab3bc626a9eeaf63063.webp?size=1024" },
+  { name: "Iconic",       avatar: "https://cdn.discordapp.com/avatars/1252296678216568927/0d331f82dcaf87b82353ff84ffc61007.webp?size=1024" },
+  { name: "Soul Dude",    avatar: "https://cdn.discordapp.com/avatars/1364121460125204501/c855b4e779e7b43365707245fb30b158.webp?size=1024" },
+  { name: "Fluidlight",   avatar: "https://cdn.discordapp.com/avatars/1371813477886197932/a_035ece4231094248271bcf4ca7dd74e3.gif?size=1024" },
+  { name: "Tender",       avatar: "https://cdn.discordapp.com/avatars/1405576798766632990/3006703a5d8d3884eacf976c1051e0a8.webp?size=1024" },
 ];
 
 function MemberCard({
