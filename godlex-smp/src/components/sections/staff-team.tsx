@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Crown, Briefcase, Shield } from "lucide-react";
+import { Crown, Briefcase, HandHeart } from "lucide-react";
 
 interface StaffMember {
   name: string;
@@ -27,14 +27,10 @@ const HELPERS: StaffMember[] = [
   { name: "Tender",       avatar: "https://cdn.discordapp.com/avatars/1405576798766632990/3006703a5d8d3884eacf976c1051e0a8.webp?size=1024" },
 ];
 
-function MemberCard({
-  member,
-  role,
-  icon,
-}: {
+function MemberCard({ member, role, badge }: {
   member: StaffMember;
   role: string;
-  icon: React.ReactNode;
+  badge: React.ReactNode;
 }) {
   return (
     <motion.div
@@ -45,12 +41,8 @@ function MemberCard({
       transition={{ duration: 0.3 }}
       className="flex flex-col items-center gap-3 group"
     >
-      {/* Avatar wrapper */}
       <div className="relative">
-        {/* Glow ring */}
         <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary to-secondary opacity-40 blur-md group-hover:opacity-70 transition duration-300" />
-
-        {/* Avatar */}
         <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/10 bg-white/5">
           <img
             src={member.avatar}
@@ -58,13 +50,10 @@ function MemberCard({
             className="w-full h-full object-cover"
           />
         </div>
-
-        {/* Role icon badge */}
         <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-background border border-white/10 flex items-center justify-center">
-          {icon}
+          {badge}
         </div>
       </div>
-
       <div className="text-center">
         <p className="font-bold text-white text-sm">{member.name}</p>
         <p className="text-xs text-white/50 mt-0.5">{role}</p>
@@ -73,33 +62,23 @@ function MemberCard({
   );
 }
 
-function RoleGroup({
-  title,
-  members,
-  role,
-  icon,
-  accent,
-}: {
+function RoleGroup({ title, members, role, badge, accent, titleColor }: {
   title: string;
   members: StaffMember[];
   role: string;
-  icon: React.ReactNode;
+  badge: React.ReactNode;
   accent: string;
+  titleColor: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-6">
-      {/* Role label */}
-      <div
-        className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-sm font-semibold ${accent}`}
-      >
-        {icon}
-        {title}
+    <div className="flex flex-col items-center gap-6 w-full">
+      <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-sm font-semibold ${accent}`}>
+        {badge}
+        <span className={titleColor}>{title}</span>
       </div>
-
-      {/* Members row */}
       <div className="flex flex-wrap justify-center gap-8">
         {members.map((m) => (
-          <MemberCard key={m.name} member={m} role={role} icon={icon} />
+          <MemberCard key={m.name} member={m} role={role} badge={badge} />
         ))}
       </div>
     </div>
@@ -109,18 +88,15 @@ function RoleGroup({
 export function StaffTeam() {
   return (
     <section id="staff-team" className="py-24 relative bg-background/50">
-      {/* Dot pattern */}
       <div
         className="absolute inset-0 z-0 opacity-[0.03]"
         style={{
-          backgroundImage:
-            "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
           backgroundSize: "32px 32px",
         }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,24 +107,21 @@ export function StaffTeam() {
             <Crown className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Staff{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Team
-            </span>
+            Staff <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Team</span>
           </h2>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             The people who keep Godlex SMP running — day and night.
           </p>
         </motion.div>
 
-        {/* Groups */}
         <div className="flex flex-col items-center gap-16">
           <RoleGroup
             title="Owner"
             members={OWNERS}
             role="Owner"
-            icon={<Crown className="w-3.5 h-3.5 text-yellow-400" />}
-            accent="bg-yellow-500/10 border-yellow-500/20 text-yellow-400"
+            badge={<Crown className="w-3.5 h-3.5 text-yellow-400" />}
+            accent="bg-yellow-500/10 border-yellow-500/20"
+            titleColor="text-yellow-400"
           />
 
           <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
@@ -157,8 +130,9 @@ export function StaffTeam() {
             title="CEO"
             members={CEOS}
             role="CEO"
-            icon={<Briefcase className="w-3.5 h-3.5 text-purple-400" />}
-            accent="bg-purple-500/10 border-purple-500/20 text-purple-400"
+            badge={<Briefcase className="w-3.5 h-3.5 text-purple-400" />}
+            accent="bg-purple-500/10 border-purple-500/20"
+            titleColor="text-purple-400"
           />
 
           <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
@@ -167,8 +141,9 @@ export function StaffTeam() {
             title="Godlex Helpers"
             members={HELPERS}
             role="Helper"
-            icon={<Shield className="w-3.5 h-3.5 text-white" />}
-            accent="bg-white/10 border-white/20 text-white"
+            badge={<HandHeart className="w-3.5 h-3.5 text-white" />}
+            accent="bg-white/5 border-white/20"
+            titleColor="text-white"
           />
         </div>
       </div>
