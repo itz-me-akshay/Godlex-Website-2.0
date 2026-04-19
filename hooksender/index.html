@@ -1,105 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <title>HookSender — Discord Webhook Builder</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background-color: #1a1a1a;
-        font-family: 'Syne', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      /* V2 Container - Type 17 equivalent */
-      .v2-container {
-        background: rgba(43, 45, 49, 0.8);
-        backdrop-filter: blur(10px);
-        border-left: 4px solid #800080; /* Accent color: 8388736 */
-        border-radius: 8px;
-        padding: 16px;
-        max-width: 480px;
-        width: 100%;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: transform 0.2s ease;
-      }
+  <!-- Open Graph / Discord embed -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://components-v2-builder.vercel.app" />
+  <meta property="og:title" content="HookSender — Discord Webhook Builder" />
+  <meta property="og:description" content="Build and send Discord webhook messages with embeds and Components V2. No login required. Developed by Akshay" />
+  <meta property="og:image" content="https://components-v2-builder.vercel.app/preview.png" />
+  <meta name="theme-color" content="#800080" />
 
-      .v2-container:hover {
-        transform: translateY(-2px);
-        background: rgba(46, 48, 53, 0.9);
-      }
+  <!-- Twitter card (also used by some Discord clients) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HookSender — Discord Webhook Builder" />
+  <meta name="twitter:description" content="Build and send Discord webhook messages with embeds and Components V2." />
+  <meta name="twitter:image" content="https://your-project.vercel.app/preview.png" />
 
-      /* Text Display - Type 10 Title */
-      .v2-title {
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-        text-decoration: none;
-      }
-
-      .v2-title a {
-        color: #00a8fc;
-        text-decoration: none;
-      }
-
-      .v2-title a:hover {
-        text-decoration: underline;
-      }
-
-      /* Separator - Type 14 */
-      .v2-separator {
-        height: 1px;
-        background: rgba(255, 255, 255, 0.1);
-        margin: 12px 0;
-      }
-
-      /* Text Display - Type 10 Description */
-      .v2-description {
-        color: #dbdee1;
-        font-family: 'DM Mono', monospace;
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      .footer-credit {
-        margin-top: 12px;
-        font-size: 0.75rem;
-        color: #949ba4;
-        font-weight: 500;
-      }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <title>HookSender — Discord Webhook Builder</title>
   </head>
   <body>
-    <div id="root">
-      <div class="v2-container">
-        <div class="v2-title">
-          <a href="https://components-v2-builder.vercel.app/" target="_blank">
-            HookSender — Discord Webhook Builder
-          </a>
-        </div>
-        
-        <div class="v2-separator"></div>
-        
-        <div class="v2-description">
-          Build and send Discord webhook messages with embeds and Components V2. 
-          No login required.
-        </div>
-
-        <div class="footer-credit">
-          Developed by Akshay
-        </div>
-      </div>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
